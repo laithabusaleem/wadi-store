@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --color-sand: #d4a96a;
+  --color-sand-light: #e8d4a8;
+  --color-mud: #2c1810;
+  --color-mud-light: #4a2f24;
+  --color-cream: #faf6ef;
+  --color-paper: #fffcf7;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Cart drawer: prevent body scroll on mobile when open */
+body.cart-open {
+  overflow: hidden;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 640px) {
+  .cart-panel-animate {
+    animation: slideInRight 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+}
